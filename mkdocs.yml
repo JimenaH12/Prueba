@@ -10,6 +10,12 @@ theme:
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
+  - admonition
+  - fenced_code
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
 
 extra_javascript:
   - javascript/mathjax.js
