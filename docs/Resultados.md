@@ -14,12 +14,10 @@ En esta sección se mostraran el planteamiento y los resultados obtenidos de MOD
 > **Nota:** Mejor compromiso entre complejidad y error de aproximación. Este método es el más utilizado comúnmente para resolver ODEs.
 
 ## Visualizar su dinámica
-![Animación1](gif1.gif)
+![Animación1](1.gif)
 
 ![Animación2](gif2.gif)
-[![texto 1](http://img.youtube.com/vi/%7Bhttps://youtu.be/FzsupsvYeXg?feature=shared}/0.jpg)](https://youtu.be/FzsupsvYeXg?feature=shared)
 
-[![texto 2]([http://img.youtube.com/vi/%7Bhttps://youtu.be/FzsupsvYeXg?feature=shared}/0.jpg](http://img.youtube.com/vi/{https://youtu.be/Hs4_QSrCgqY?feature=shared}/0.jpg))](https://youtu.be/Hs4_QSrCgqY?feature=shared)
 ## Paralelización 
 En el gráfico presentado a continuación, observamos cómo la paralelización debería acelerar el proceso de ejecución, ya que el código se divide en múltiples tareas. Sin embargo, en este caso particular, la versión paralelizada fue más lenta. Esto puede deberse a varios factores, como sobrecarga de procesos, problemas de sincronización, o limitaciones de recursos en la computadora.    
 <div>
