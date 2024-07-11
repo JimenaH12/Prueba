@@ -21,7 +21,7 @@ En esta sección se mostraran el planteamiento y los resultados obtenidos de MOD
 </video>
 
 <video width="320" height="240" controls>
-  <source src="2.mp4" type="2/mp4">
+  <source src="Prueba/docs/2.mp4" type="2/mp4">
   Tu navegador no soporta la etiqueta de video.
 </video>
 [Ver video](1.mp4)
