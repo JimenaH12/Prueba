@@ -14,7 +14,9 @@ En esta sección se mostraran el planteamiento y los resultados obtenidos de MOD
 > **Nota:** Mejor compromiso entre complejidad y error de aproximación. Este método es el más utilizado comúnmente para resolver ODEs.
 
 ## Visualizar su dinámica
+![Animación1](gif1.gif)
 
+![Animación2](gif2.gif)
 [![texto 1](http://img.youtube.com/vi/%7Bhttps://youtu.be/FzsupsvYeXg?feature=shared}/0.jpg)](https://youtu.be/FzsupsvYeXg?feature=shared)
 
 [![texto 2]([http://img.youtube.com/vi/%7Bhttps://youtu.be/FzsupsvYeXg?feature=shared}/0.jpg](http://img.youtube.com/vi/{https://youtu.be/Hs4_QSrCgqY?feature=shared}/0.jpg))](https://youtu.be/Hs4_QSrCgqY?feature=shared)
