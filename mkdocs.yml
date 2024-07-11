@@ -27,6 +27,7 @@ plugins:
 nav:
   - Main: index.md
   - Reference: reference.md
-  - Guía de uso: how-to-guides.md
   - Explicación: explicacion.md
+  - Resultados: Resultados.md
+  - Guía de uso: how-to-guides.md
 
