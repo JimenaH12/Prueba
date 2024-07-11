@@ -15,7 +15,7 @@ En esta sección se mostraran el planteamiento y los resultados obtenidos de MOD
 
 ## Visualizar su dinámica
 
-[![Ver video](1.mp4)]
+[![1](http://img.youtube.com/vi/%7Bhttps://youtu.be/FzsupsvYeXg?feature=shared}/0.jpg)](https://youtu.be/FzsupsvYeXg?feature=shared)
 
 ## Paralelización 
 En el gráfico presentado a continuación, observamos cómo la paralelización debería acelerar el proceso de ejecución, ya que el código se divide en múltiples tareas. Sin embargo, en este caso particular, la versión paralelizada fue más lenta. Esto puede deberse a varios factores, como sobrecarga de procesos, problemas de sincronización, o limitaciones de recursos en la computadora.    
