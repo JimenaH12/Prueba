@@ -8,10 +8,10 @@ En esta sección se mostraran el planteamiento y los resultados obtenidos de MOD
 ####  Formal a la ecuación de schrodinger
 
 
-> **Nota:** La idea del método RK2 es utilizar el punto medio para evaluar el método de Euler.
+>  Es una ecuación fundamental en la mecánica cuántica que describe cómo el estado cuántico de un sistema físico cambia con el tiempo. Nos da una representación muy precisa de la evolución temporal de la función de onda.
 
 #### Método de Runge-Kutta 4 Orden (RK4)
-> **Nota:** Mejor compromiso entre complejidad y error de aproximación. Este método es el más utilizado comúnmente para resolver ODEs.
+>  Mejor compromiso entre complejidad y error de aproximación. Este método es el más utilizado comúnmente para resolver ODEs.Nos permite calcular con precisión la evolución temporal de la función de onda.
 
 ## Visualizar su dinámica
 ###### Probabilidad de encontrar el fermion en una evolución cuántica temporal dentro de una grilla unidimensional.
