@@ -493,18 +493,18 @@ y paralelización mediante hilos.</p>
     <div class="doc doc-contents ">
 
       <p>Función para paralelizar el cálculo de la ecuación de Schrödinger.</p>
-<p>Parameters:
-matriz_ham (numpy.ndarray): Matriz Hamiltoniana que define el sistema físico.
-grilla_actual (numpy.ndarray): Estado actual de la función de onda.
-num_hilos (int, optional): Número de hilos a utilizar para la paralelización. Default es 1.</p>
-<p>Returns:
-numpy.ndarray: Resultado de la ecuación de Schrödinger después de la paralelización.</p>
+<p>:param matriz_ham: Matriz Hamiltoniana que define el sistema físico.
+:type matriz_ham: numpy.ndarray
+:param grilla_actual: Estado actual de la función de onda.
+:type grilla_actual: numpy.ndarray
+:param num_hilos: Número de hilos a utilizar para la paralelización. Default es 1.
+:type num_hilos: int, optional
+:return: Resultado de la ecuación de Schrödinger después de la paralelización.
+:rtype: numpy.ndarray</p>
 
             <details class="quote">
               <summary>Source code in <code>Proyect/Proyecto.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 78</span>
-<span class="normal"> 79</span>
-<span class="normal"> 80</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 80</span>
 <span class="normal"> 81</span>
 <span class="normal"> 82</span>
 <span class="normal"> 83</span>
@@ -531,17 +531,21 @@ numpy.ndarray: Resultado de la ecuación de Schrödinger después de la paraleli
 <span class="normal">104</span>
 <span class="normal">105</span>
 <span class="normal">106</span>
-<span class="normal">107</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">ecu_sch_paralelo</span><span class="p">(</span><span class="n">matriz_ham</span><span class="p">,</span> <span class="n">grilla_actual</span><span class="p">,</span> <span class="n">num_hilos</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">ecu_sch_paralelo</span><span class="p">(</span><span class="n">matriz_ham</span><span class="p">,</span> <span class="n">grilla_actual</span><span class="p">,</span> <span class="n">num_hilos</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Función para paralelizar el cálculo de la ecuación de Schrödinger.</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">    matriz_ham (numpy.ndarray): Matriz Hamiltoniana que define el sistema físico.</span>
-<span class="sd">    grilla_actual (numpy.ndarray): Estado actual de la función de onda.</span>
-<span class="sd">    num_hilos (int, optional): Número de hilos a utilizar para la paralelización. Default es 1.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">    numpy.ndarray: Resultado de la ecuación de Schrödinger después de la paralelización.</span>
+<span class="sd">    :param matriz_ham: Matriz Hamiltoniana que define el sistema físico.</span>
+<span class="sd">    :type matriz_ham: numpy.ndarray</span>
+<span class="sd">    :param grilla_actual: Estado actual de la función de onda.</span>
+<span class="sd">    :type grilla_actual: numpy.ndarray</span>
+<span class="sd">    :param num_hilos: Número de hilos a utilizar para la paralelización. Default es 1.</span>
+<span class="sd">    :type num_hilos: int, optional</span>
+<span class="sd">    :return: Resultado de la ecuación de Schrödinger después de la paralelización.</span>
+<span class="sd">    :rtype: numpy.ndarray</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">grilla_actual</span><span class="p">)</span>
     <span class="n">step</span> <span class="o">=</span> <span class="n">N</span> <span class="o">//</span> <span class="n">num_hilos</span>
@@ -579,16 +583,19 @@ numpy.ndarray: Resultado de la ecuación de Schrödinger después de la paraleli
     <div class="doc doc-contents ">
 
       <p>Función para la evolución temporal según la ecuación de Schrödinger con el método de Runge-Kutta de cuarto orden.</p>
-<p>Parameters:
-matriz_ham (numpy.ndarray): Matriz Hamiltoniana que define el sistema físico.
-grilla_actual (numpy.ndarray): Estado actual de la función de onda.
-dt (float): Paso de tiempo.</p>
-<p>Returns:
-numpy.ndarray: Nuevo estado de la grilla después de la evolución temporal.</p>
+<p>:param matriz_ham: Matriz Hamiltoniana que define el sistema físico.
+:type matriz_ham: numpy.ndarray
+:param grilla_actual: Estado actual de la función de onda.
+:type grilla_actual: numpy.ndarray
+:param dt: Paso de tiempo.
+:type dt: float
+:return: Nuevo estado de la grilla después de la evolución temporal.
+:rtype: numpy.ndarray</p>
 
             <details class="quote">
               <summary>Source code in <code>Proyect/Proyecto.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">44</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">43</span>
+<span class="normal">44</span>
 <span class="normal">45</span>
 <span class="normal">46</span>
 <span class="normal">47</span>
@@ -609,13 +616,14 @@ numpy.ndarray: Nuevo estado de la grilla después de la evolución temporal.</p>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Función para la evolución temporal según la ecuación de Schrödinger con el método de Runge-Kutta de cuarto orden.</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">    matriz_ham (numpy.ndarray): Matriz Hamiltoniana que define el sistema físico.</span>
-<span class="sd">    grilla_actual (numpy.ndarray): Estado actual de la función de onda.</span>
-<span class="sd">    dt (float): Paso de tiempo.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">    numpy.ndarray: Nuevo estado de la grilla después de la evolución temporal.</span>
+<span class="sd">    :param matriz_ham: Matriz Hamiltoniana que define el sistema físico.</span>
+<span class="sd">    :type matriz_ham: numpy.ndarray</span>
+<span class="sd">    :param grilla_actual: Estado actual de la función de onda.</span>
+<span class="sd">    :type grilla_actual: numpy.ndarray</span>
+<span class="sd">    :param dt: Paso de tiempo.</span>
+<span class="sd">    :type dt: float</span>
+<span class="sd">    :return: Nuevo estado de la grilla después de la evolución temporal.</span>
+<span class="sd">    :rtype: numpy.ndarray</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">k1</span> <span class="o">=</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">ecu_sch_paralelo</span><span class="p">(</span><span class="n">matriz_ham</span><span class="p">,</span> <span class="n">grilla_actual</span><span class="p">)</span>
     <span class="n">k2</span> <span class="o">=</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">ecu_sch_paralelo</span><span class="p">(</span><span class="n">matriz_ham</span><span class="p">,</span> <span class="n">grilla_actual</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">k1</span><span class="p">)</span>
@@ -641,10 +649,10 @@ numpy.ndarray: Nuevo estado de la grilla después de la evolución temporal.</p>
     <div class="doc doc-contents ">
 
       <p>Función para crear el estado inicial (grilla).</p>
-<p>Parameters:
-N (int): Tamaño de la grilla.</p>
-<p>Returns:
-numpy.ndarray: Arreglo NumPy que representa el estado inicial con un fermión en la posición central.</p>
+<p>:param N: Tamaño de la grilla.
+:type N: int
+:return: Arreglo NumPy que representa el estado inicial con un fermión en la posición central.
+:rtype: numpy.ndarray</p>
 
             <details class="quote">
               <summary>Source code in <code>Proyect/Proyecto.py</code></summary>
@@ -659,16 +667,14 @@ numpy.ndarray: Arreglo NumPy que representa el estado inicial con un fermión en
 <span class="normal">20</span>
 <span class="normal">21</span>
 <span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">estado_inicial</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">estado_inicial</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Función para crear el estado inicial (grilla).</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">    N (int): Tamaño de la grilla.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">    numpy.ndarray: Arreglo NumPy que representa el estado inicial con un fermión en la posición central.</span>
+<span class="sd">    :param N: Tamaño de la grilla.</span>
+<span class="sd">    :type N: int</span>
+<span class="sd">    :return: Arreglo NumPy que representa el estado inicial con un fermión en la posición central.</span>
+<span class="sd">    :rtype: numpy.ndarray</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">estado_inicial</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
     <span class="n">estado_inicial</span><span class="p">[</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
@@ -691,19 +697,18 @@ numpy.ndarray: Arreglo NumPy que representa el estado inicial con un fermión en
     <div class="doc doc-contents ">
 
       <p>Función principal para evolucionar la grilla en el tiempo.</p>
-<p>Parameters:
-t_i (numpy.ndarray): Elementos fuera de la diagonal de la matriz Hamiltoniana.
-epsilon (numpy.ndarray): Valores de la diagonal de la matriz Hamiltoniana.
-tiempos (numpy.ndarray): Tiempos para los cuales se evaluará la función de onda.</p>
-<p>Returns:
-tuple: Tupla con la forma de la función de onda al cuadrado en cada tiempo y el estado final de la grilla.</p>
+<p>:param t_i: Elementos fuera de la diagonal de la matriz Hamiltoniana.
+:type t_i: numpy.ndarray
+:param epsilon: Valores de la diagonal de la matriz Hamiltoniana.
+:type epsilon: numpy.ndarray
+:param tiempos: Tiempos para los cuales se evaluará la función de onda.
+:type tiempos: numpy.ndarray
+:return: Tupla con la forma de la función de onda al cuadrado en cada tiempo y el estado final de la grilla.
+:rtype: tuple</p>
 
             <details class="quote">
               <summary>Source code in <code>Proyect/Proyecto.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">109</span>
-<span class="normal">110</span>
-<span class="normal">111</span>
-<span class="normal">112</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">112</span>
 <span class="normal">113</span>
 <span class="normal">114</span>
 <span class="normal">115</span>
@@ -722,17 +727,22 @@ tuple: Tupla con la forma de la función de onda al cuadrado en cada tiempo y el
 <span class="normal">128</span>
 <span class="normal">129</span>
 <span class="normal">130</span>
-<span class="normal">131</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">inicio</span><span class="p">(</span><span class="n">t_i</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">,</span> <span class="n">tiempos</span><span class="p">):</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">inicio</span><span class="p">(</span><span class="n">t_i</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">,</span> <span class="n">tiempos</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Función principal para evolucionar la grilla en el tiempo.</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">    t_i (numpy.ndarray): Elementos fuera de la diagonal de la matriz Hamiltoniana.</span>
-<span class="sd">    epsilon (numpy.ndarray): Valores de la diagonal de la matriz Hamiltoniana.</span>
-<span class="sd">    tiempos (numpy.ndarray): Tiempos para los cuales se evaluará la función de onda.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">    tuple: Tupla con la forma de la función de onda al cuadrado en cada tiempo y el estado final de la grilla.</span>
+<span class="sd">    :param t_i: Elementos fuera de la diagonal de la matriz Hamiltoniana.</span>
+<span class="sd">    :type t_i: numpy.ndarray</span>
+<span class="sd">    :param epsilon: Valores de la diagonal de la matriz Hamiltoniana.</span>
+<span class="sd">    :type epsilon: numpy.ndarray</span>
+<span class="sd">    :param tiempos: Tiempos para los cuales se evaluará la función de onda.</span>
+<span class="sd">    :type tiempos: numpy.ndarray</span>
+<span class="sd">    :return: Tupla con la forma de la función de onda al cuadrado en cada tiempo y el estado final de la grilla.</span>
+<span class="sd">    :rtype: tuple</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">dt</span> <span class="o">=</span> <span class="n">tiempos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">tiempos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">N</span> <span class="o">=</span> <span class="n">epsilon</span><span class="o">.</span><span class="n">size</span>
@@ -763,15 +773,17 @@ tuple: Tupla con la forma de la función de onda al cuadrado en cada tiempo y el
     <div class="doc doc-contents ">
 
       <p>Función para crear la matriz Hamiltoniana.</p>
-<p>Parameters:
-t_i (numpy.ndarray): Elementos fuera de la diagonal de la matriz Hamiltoniana.
-epsilon (numpy.ndarray): Valores de la diagonal de la matriz Hamiltoniana.</p>
-<p>Returns:
-numpy.ndarray: Matriz Hamiltoniana generada.</p>
+<p>:param t_i: Elementos fuera de la diagonal de la matriz Hamiltoniana.
+:type t_i: numpy.ndarray
+:param epsilon: Valores de la diagonal de la matriz Hamiltoniana.
+:type epsilon: numpy.ndarray
+:return: Matriz Hamiltoniana generada.
+:rtype: numpy.ndarray</p>
 
             <details class="quote">
               <summary>Source code in <code>Proyect/Proyecto.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">26</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">25</span>
+<span class="normal">26</span>
 <span class="normal">27</span>
 <span class="normal">28</span>
 <span class="normal">29</span>
@@ -786,17 +798,16 @@ numpy.ndarray: Matriz Hamiltoniana generada.</p>
 <span class="normal">38</span>
 <span class="normal">39</span>
 <span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">matriz_ham</span><span class="p">(</span><span class="n">t_i</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">):</span>
+<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">matriz_ham</span><span class="p">(</span><span class="n">t_i</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Función para crear la matriz Hamiltoniana.</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">    t_i (numpy.ndarray): Elementos fuera de la diagonal de la matriz Hamiltoniana.</span>
-<span class="sd">    epsilon (numpy.ndarray): Valores de la diagonal de la matriz Hamiltoniana.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">    numpy.ndarray: Matriz Hamiltoniana generada.</span>
+<span class="sd">    :param t_i: Elementos fuera de la diagonal de la matriz Hamiltoniana.</span>
+<span class="sd">    :type t_i: numpy.ndarray</span>
+<span class="sd">    :param epsilon: Valores de la diagonal de la matriz Hamiltoniana.</span>
+<span class="sd">    :type epsilon: numpy.ndarray</span>
+<span class="sd">    :return: Matriz Hamiltoniana generada.</span>
+<span class="sd">    :rtype: numpy.ndarray</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">N</span> <span class="o">=</span> <span class="n">epsilon</span><span class="o">.</span><span class="n">size</span>
     <span class="n">matriz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">))</span>
@@ -822,13 +833,16 @@ numpy.ndarray: Matriz Hamiltoniana generada.</p>
     <div class="doc doc-contents ">
 
       <p>Función para dividir el trabajo entre varios hilos para la ecuación de Schrödinger.</p>
-<p>Parameters:
-matriz_ham (numpy.ndarray): Matriz Hamiltoniana que define el sistema físico.
-grilla_actual (numpy.ndarray): Estado actual de la función de onda.
-start (int): Índice de inicio para la porción de trabajo del hilo.
-end (int): Índice de fin para la porción de trabajo del hilo.</p>
-<p>Returns:
-numpy.ndarray: Resultado de la parte de la ecuación de Schrödinger calculada por el hilo.</p>
+<p>:param matriz_ham: Matriz Hamiltoniana que define el sistema físico.
+:type matriz_ham: numpy.ndarray
+:param grilla_actual: Estado actual de la función de onda.
+:type grilla_actual: numpy.ndarray
+:param start: Índice de inicio para la porción de trabajo del hilo.
+:type start: int
+:param end: Índice de fin para la porción de trabajo del hilo.
+:type end: int
+:return: Resultado de la parte de la ecuación de Schrödinger calculada por el hilo.
+:rtype: numpy.ndarray</p>
 
             <details class="quote">
               <summary>Source code in <code>Proyect/Proyecto.py</code></summary>
@@ -845,18 +859,22 @@ numpy.ndarray: Resultado de la parte de la ecuación de Schrödinger calculada p
 <span class="normal">73</span>
 <span class="normal">74</span>
 <span class="normal">75</span>
-<span class="normal">76</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">parte_ecu_sch</span><span class="p">(</span><span class="n">matriz_ham</span><span class="p">,</span> <span class="n">grilla_actual</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">parte_ecu_sch</span><span class="p">(</span><span class="n">matriz_ham</span><span class="p">,</span> <span class="n">grilla_actual</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Función para dividir el trabajo entre varios hilos para la ecuación de Schrödinger.</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">    matriz_ham (numpy.ndarray): Matriz Hamiltoniana que define el sistema físico.</span>
-<span class="sd">    grilla_actual (numpy.ndarray): Estado actual de la función de onda.</span>
-<span class="sd">    start (int): Índice de inicio para la porción de trabajo del hilo.</span>
-<span class="sd">    end (int): Índice de fin para la porción de trabajo del hilo.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">    numpy.ndarray: Resultado de la parte de la ecuación de Schrödinger calculada por el hilo.</span>
+<span class="sd">    :param matriz_ham: Matriz Hamiltoniana que define el sistema físico.</span>
+<span class="sd">    :type matriz_ham: numpy.ndarray</span>
+<span class="sd">    :param grilla_actual: Estado actual de la función de onda.</span>
+<span class="sd">    :type grilla_actual: numpy.ndarray</span>
+<span class="sd">    :param start: Índice de inicio para la porción de trabajo del hilo.</span>
+<span class="sd">    :type start: int</span>
+<span class="sd">    :param end: Índice de fin para la porción de trabajo del hilo.</span>
+<span class="sd">    :type end: int</span>
+<span class="sd">    :return: Resultado de la parte de la ecuación de Schrödinger calculada por el hilo.</span>
+<span class="sd">    :rtype: numpy.ndarray</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">matriz_ham</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">,</span> <span class="p">:]</span> <span class="o">@</span> <span class="n">grilla_actual</span>
 </code></pre></div></td></tr></table></div>
