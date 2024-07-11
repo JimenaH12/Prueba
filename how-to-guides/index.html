@@ -325,24 +325,27 @@
   <h1>Guía de uso</h1>
 
 <p>sta parte de la documentación del proyecto se centra en un Enfoque orientado a los problemas. Afrontarás tareas que podrías resolver, con la ayuda del código en este proyecto.</p>
-<h2 id="como-iniciar">¿Como iniciar?</h2>
+<h2 id="como-iniciar">¿Como iniciar?<a class="headerlink" href="#como-iniciar" title="Permanent link">&para;</a></h2>
 <p>descargue el codigo del repositorio de este github en el mismo directorio que tu script de python.</p>
-<pre><code>tu_proyecto/
+<div class="codehilite"><pre><span></span><code>tu_proyecto/
 │
 ├── Proyect/
 │   ├── __init__.py
 │   └── Proyecto.py
 │
 └── tu_script.py
-</code></pre>
+</code></pre></div>
+
 <p>Dentro de <code>tu_script.py</code> ahora puedes importar las funciones como: ecu_schrodinger_rk4(). </p>
 <p>module:</p>
-<pre><code># tu_script.py
+<div class="codehilite"><pre><span></span><code># tu_script.py
 from Proyect.Proyecto import ecu_schrodinger_rk4
-</code></pre>
+</code></pre></div>
+
 <p>Con la Matriz Hamiltoniana que define el sistema físico, podes definir una función para la evolución temporal según la ecuación de Schrödinger con paralelización. En esta función se definen las ecuaciones k1, k2, k3, k4.</p>
-<pre><code># tu_script.py
-</code></pre>
+<div class="codehilite"><pre><span></span><code># tu_script.py
+</code></pre></div>
+
 <p>def ecu_schrodinger_rk4(matriz_ham, grilla_actual, dt): 
     k1 = dt * ecu_sch_paralelo(matriz_ham, grilla_actual) ## Calcular el primer paso de RK4.
     k2 = dt * ecu_sch_paralelo(matriz_ham, grilla_actual + 0.5 * k1) ## Calcula el segundo paso.

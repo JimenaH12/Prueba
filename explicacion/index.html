@@ -405,7 +405,7 @@
 
 
 <p>Función para la evolución temporal según la ecuación de Schrödinger con paralelización</p>
-<h2 id="introduccion">Introducción</h2>
+<h2 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h2>
 <p>Consideremos el problema
 \begin{align}
 \frac{{\rm d}x}{{\rm d}t} = \frac{2x}{t}.
@@ -428,7 +428,7 @@ $$
 \frac{\text d^3 x}{\text d t^3} =f(x, t)\quad \Leftrightarrow \quad \frac{\text d x}{\text d t} = v,\ \frac{\text d v}{\text d t} = a,\ \frac{\text d a}{\text d t}=f.
 $$
 * Conjuntos acoplados de ecuaciones diferenciales</p>
-<h2 id="bibliotecas">Bibliotecas</h2>
+<h2 id="bibliotecas">Bibliotecas<a class="headerlink" href="#bibliotecas" title="Permanent link">&para;</a></h2>
 <p>Antes de discutir algoritmos para resolver ODEs, mencionemos las bibliotecas en <code>Python</code> para resolver sistemas. </p>
 <ul>
 <li><code>SciPy</code> contiene dos métodos para atacar el problema ubicados dentro del módulo <code>scipy.integrate</code></li>
@@ -438,10 +438,10 @@ $$
 <li>En muchos casos prácticos, estos métodos contienen muchos cálculos secundarios que pueden hacer la evaluación de una ecuación diferencial muy ineficiente. </li>
 <li>Si el rendimiento de estos métodos no es suficiente, lo mejor es implementar un método que sepamos que se ajusta bien a nuestro problema</li>
 </ul>
-<h1 id="metodo-de-runge-kutta">Método de Runge-Kutta</h1>
+<h1 id="metodo-de-runge-kutta">Método de Runge-Kutta<a class="headerlink" href="#metodo-de-runge-kutta" title="Permanent link">&para;</a></h1>
 <p>El método de Euler puede darnos una buena aproximación dependiendo del problema y de la cantidad de iteraciones que necesitamos en nuestra solución. En general, con el método de Euler, un cálculo que es el doble más preciso requiere el doble de recursos computacionales.</p>
 <p>El método de Runge-Kutta es en realidad una familia de métodos de distinto orden que proveen una mejor aproximación sin la necesidad de considerar ordenes más altos en la expansión de Taylor del método de Euler. Este último punto se quiere evitar, dado que es complicado conocer la derivada de la función que estamos evaluando en el lado derecho de la ODE.</p>
-<h3 id="metodo-de-runge-kutta-2rm-do-orden-rk2">Método de Runge-Kutta 2<span class="arithmatex">\(^{\rm do}\)</span> Orden (RK2)</h3>
+<h3 id="metodo-de-runge-kutta-2rm-do-orden-rk2">Método de Runge-Kutta 2<span class="arithmatex">\(^{\rm do}\)</span> Orden (RK2)<a class="headerlink" href="#metodo-de-runge-kutta-2rm-do-orden-rk2" title="Permanent link">&para;</a></h3>
 <p>La idea del método RK2 es utilizar el punto medio para evaluar el método de Euler, como se indica en la figura. Mientras que el método de Euler se aplica en el punto <span class="arithmatex">\(t\)</span> para evaluar la derivada para aproximar la función en el punto <span class="arithmatex">\(x = t + h\)</span>, el método RK2 utiliza el punto medio <span class="arithmatex">\(t + h/2\)</span>. </p>
 <p>De esta forma, se alcanza una mejor aproximación para el mismo valor de <span class="arithmatex">\(h\)</span>.</p>
 <p>El método se deriva aplicando la serie de Taylor alrededor del punto medio <span class="arithmatex">\(t + h/2\)</span> para obtener el valor de la función en el punto <span class="arithmatex">\(x(t + h)\)</span>. Tenemos
@@ -468,7 +468,7 @@ El término de orden <span class="arithmatex">\(h^2\)</span> desaparece y nuestr
 * <span class="arithmatex">\(x(t + h) = x(t) + k_2\)</span>
 El error de aproximación de cada paso es de orden <span class="arithmatex">\(O(h^3)\)</span>, mientras que el error global (con un análisis similar al que hicimos con el método de Euler) es de order <span class="arithmatex">\(O(h^2)\)</span>. </p>
 <p>Cabe recalcar que al utilizar el método de Euler para la primera parte de la aproximación, el error también es de <span class="arithmatex">\(O(h^3)\)</span> y por ende el error de aproximación se mantiene de <span class="arithmatex">\(O(h^3)\)</span>.</p>
-<h3 id="metodo-de-runge-kutta-de-4rm-to-orden">Método de Runge-Kutta de 4<span class="arithmatex">\(^{\rm to}\)</span> Orden</h3>
+<h3 id="metodo-de-runge-kutta-de-4rm-to-orden">Método de Runge-Kutta de 4<span class="arithmatex">\(^{\rm to}\)</span> Orden<a class="headerlink" href="#metodo-de-runge-kutta-de-4rm-to-orden" title="Permanent link">&para;</a></h3>
 <p>La metodología anterior se puede aplicar aún a más puntos ubicados entre <span class="arithmatex">\(x(t)\)</span> y <span class="arithmatex">\(x(t + h)\)</span> realizando expansiones de Taylor. De esta forma se pueden agrupar términos de orden <span class="arithmatex">\(h^3\)</span>, <span class="arithmatex">\(h^4\)</span>, etc; para cancelar dichas expresiones. </p>
 <p>El problema de hacer esto es que las expresiones se vuelven más complicadas conforme incrementamos el orden de aproximación. En general, la regla de dedo es que el <span class="arithmatex">\(4^{\rm to}\)</span> orden corresponde al mejor compromiso entre complejidad y error de aproximación. Este método es el más utilizado comunmente para resolver ODEs. </p>
 <p>El álgebra para encontrar las ecuaciones de <span class="arithmatex">\(4^{\rm to}\)</span> orden es tediosa, pero el resultado final es
