@@ -13,15 +13,11 @@ def estado_inicial(N):
     """
     Función para crear el estado inicial (grilla).
 
-    Parameters
-    ----------
-    N : int
-        Tamaño de la grilla.
+    Args:
+        N (int): Tamaño de la grilla.
 
-    Returns
-    -------
-    numpy.ndarray
-        Arreglo NumPy que representa el estado inicial con un fermión en la posición central.
+    Returns:
+        numpy.ndarray: Arreglo NumPy que representa el estado inicial con un fermión en la posición central.
     """
     estado_inicial = np.zeros(N)
     estado_inicial[N//2] = 1
@@ -31,17 +27,12 @@ def matriz_ham(t_i, epsilon):
     """
     Función para crear la matriz Hamiltoniana.
 
-    Parameters
-    ----------
-    t_i : numpy.ndarray
-        Elementos fuera de la diagonal de la matriz Hamiltoniana.
-    epsilon : numpy.ndarray
-        Valores de la diagonal de la matriz Hamiltoniana.
+    Args:
+        t_i (numpy.ndarray): Elementos fuera de la diagonal de la matriz Hamiltoniana.
+        epsilon (numpy.ndarray): Valores de la diagonal de la matriz Hamiltoniana.
 
-    Returns
-    -------
-    numpy.ndarray
-        Matriz Hamiltoniana generada.
+    Returns:
+        numpy.ndarray: Matriz Hamiltoniana generada.
     """
     N = epsilon.size
     matriz = np.zeros((N, N))
@@ -54,19 +45,13 @@ def ecu_schrodinger_rk4(matriz_ham, grilla_actual, dt):
     """
     Función para la evolución temporal según la ecuación de Schrödinger con el método de Runge-Kutta de cuarto orden.
 
-    Parameters
-    ----------
-    matriz_ham : numpy.ndarray
-        Matriz Hamiltoniana que define el sistema físico.
-    grilla_actual : numpy.ndarray
-        Estado actual de la función de onda.
-    dt : float
-        Paso de tiempo.
+    Args:
+        matriz_ham (numpy.ndarray): Matriz Hamiltoniana que define el sistema físico.
+        grilla_actual (numpy.ndarray): Estado actual de la función de onda.
+        dt (float): Paso de tiempo.
 
-    Returns
-    -------
-    numpy.ndarray
-        Nuevo estado de la grilla después de la evolución temporal.
+    Returns:
+        numpy.ndarray: Nuevo estado de la grilla después de la evolución temporal.
     """
     k1 = dt * ecu_sch_paralelo(matriz_ham, grilla_actual)
     k2 = dt * ecu_sch_paralelo(matriz_ham, grilla_actual + 0.5 * k1)
@@ -79,21 +64,14 @@ def parte_ecu_sch(matriz_ham, grilla_actual, start, end):
     """
     Función para dividir el trabajo entre varios hilos para la ecuación de Schrödinger.
 
-    Parameters
-    ----------
-    matriz_ham : numpy.ndarray
-        Matriz Hamiltoniana que define el sistema físico.
-    grilla_actual : numpy.ndarray
-        Estado actual de la función de onda.
-    start : int
-        Índice de inicio para la porción de trabajo del hilo.
-    end : int
-        Índice de fin para la porción de trabajo del hilo.
+    Args:
+        matriz_ham (numpy.ndarray): Matriz Hamiltoniana que define el sistema físico.
+        grilla_actual (numpy.ndarray): Estado actual de la función de onda.
+        start (int): Índice de inicio para la porción de trabajo del hilo.
+        end (int): Índice de fin para la porción de trabajo del hilo.
 
-    Returns
-    -------
-    numpy.ndarray
-        Resultado de la parte de la ecuación de Schrödinger calculada por el hilo.
+    Returns:
+        numpy.ndarray: Resultado de la parte de la ecuación de Schrödinger calculada por el hilo.
     """
     return -1j * matriz_ham[start:end, :] @ grilla_actual
 
@@ -101,19 +79,13 @@ def ecu_sch_paralelo(matriz_ham, grilla_actual, num_hilos=1):
     """
     Función para paralelizar el cálculo de la ecuación de Schrödinger.
 
-    Parameters
-    ----------
-    matriz_ham : numpy.ndarray
-        Matriz Hamiltoniana que define el sistema físico.
-    grilla_actual : numpy.ndarray
-        Estado actual de la función de onda.
-    num_hilos : int, optional
-        Número de hilos a utilizar para la paralelización. Default es 1.
+    Args:
+        matriz_ham (numpy.ndarray): Matriz Hamiltoniana que define el sistema físico.
+        grilla_actual (numpy.ndarray): Estado actual de la función de onda.
+        num_hilos (int, optional): Número de hilos a utilizar para la paralelización. Default es 1.
 
-    Returns
-    -------
-    numpy.ndarray
-        Resultado de la ecuación de Schrödinger después de la paralelización.
+    Returns:
+        numpy.ndarray: Resultado de la ecuación de Schrödinger después de la paralelización.
     """
     N = len(grilla_actual)
     step = N // num_hilos
@@ -138,19 +110,13 @@ def inicio(t_i, epsilon, tiempos):
     """
     Función principal para evolucionar la grilla en el tiempo.
 
-    Parameters
-    ----------
-    t_i : numpy.ndarray
-        Elementos fuera de la diagonal de la matriz Hamiltoniana.
-    epsilon : numpy.ndarray
-        Valores de la diagonal de la matriz Hamiltoniana.
-    tiempos : numpy.ndarray
-        Tiempos para los cuales se evaluará la función de onda.
+    Args:
+        t_i (numpy.ndarray): Elementos fuera de la diagonal de la matriz Hamiltoniana.
+        epsilon (numpy.ndarray): Valores de la diagonal de la matriz Hamiltoniana.
+        tiempos (numpy.ndarray): Tiempos para los cuales se evaluará la función de onda.
 
-    Returns
-    -------
-    tuple
-        Tupla con la forma de la función de onda al cuadrado en cada tiempo y el estado final de la grilla.
+    Returns:
+        tuple: Tupla con la forma de la función de onda al cuadrado en cada tiempo y el estado final de la grilla.
     """
     dt = tiempos[1] - tiempos[0]
     N = epsilon.size
@@ -180,6 +146,5 @@ if __name__ == "__main__":
         elapsed_time = time.time() - start_time
         print(f"Tiempo de ejecución: {elapsed_time:.4f} segundos")
         print()
-
 
 
