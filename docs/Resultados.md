@@ -10,7 +10,7 @@ En esta sección se mostraran el planteamiento y los resultados obtenidos de MOD
 
 > **Nota:** La idea del método RK2 es utilizar el punto medio para evaluar el método de Euler.
 
-#### Método de Runge-Kutta de 4 Orden
+#### Método de Runge-Kutta 4 Orden (RK4)
 > **Nota:** Mejor compromiso entre complejidad y error de aproximación. Este método es el más utilizado comúnmente para resolver ODEs.
 
 ## Visualizar su dinámica
