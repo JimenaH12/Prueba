@@ -566,7 +566,8 @@ y paralelización mediante hilos.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>numpy.ndarray: Resultado de la ecuación de Schrödinger después de la paralelización.</p>
+                <p>numpy.ndarray:
+Resultado de la ecuación de Schrödinger después de la paralelización.</p>
               </div>
             </td>
           </tr>
@@ -575,11 +576,7 @@ y paralelización mediante hilos.</p>
 
             <details class="quote">
               <summary>Source code in <code>Proyect/Proyecto.py</code></summary>
-              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 78</span>
-<span class="normal"> 79</span>
-<span class="normal"> 80</span>
-<span class="normal"> 81</span>
-<span class="normal"> 82</span>
+              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 82</span>
 <span class="normal"> 83</span>
 <span class="normal"> 84</span>
 <span class="normal"> 85</span>
@@ -604,7 +601,12 @@ y paralelización mediante hilos.</p>
 <span class="normal">104</span>
 <span class="normal">105</span>
 <span class="normal">106</span>
-<span class="normal">107</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">ecu_sch_paralelo</span><span class="p">(</span><span class="n">matriz_ham</span><span class="p">,</span> <span class="n">grilla_actual</span><span class="p">,</span> <span class="n">num_hilos</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">ecu_sch_paralelo</span><span class="p">(</span><span class="n">matriz_ham</span><span class="p">,</span> <span class="n">grilla_actual</span><span class="p">,</span> <span class="n">num_hilos</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Función para paralelizar el cálculo de la ecuación de Schrödinger.</span>
 
@@ -614,7 +616,8 @@ y paralelización mediante hilos.</p>
 <span class="sd">        num_hilos (int, optional): Número de hilos a utilizar para la paralelización. Default es 1.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        numpy.ndarray: Resultado de la ecuación de Schrödinger después de la paralelización.</span>
+<span class="sd">        numpy.ndarray:</span>
+<span class="sd">            Resultado de la ecuación de Schrödinger después de la paralelización.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">grilla_actual</span><span class="p">)</span>
     <span class="n">step</span> <span class="o">=</span> <span class="n">N</span> <span class="o">//</span> <span class="n">num_hilos</span>
@@ -725,7 +728,8 @@ y paralelización mediante hilos.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>numpy.ndarray: Nuevo estado de la grilla después de la evolución temporal.</p>
+                <p>numpy.ndarray:
+Nuevo estado de la grilla después de la evolución temporal.</p>
               </div>
             </td>
           </tr>
@@ -734,9 +738,7 @@ y paralelización mediante hilos.</p>
 
             <details class="quote">
               <summary>Source code in <code>Proyect/Proyecto.py</code></summary>
-              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
+              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">46</span>
 <span class="normal">47</span>
 <span class="normal">48</span>
 <span class="normal">49</span>
@@ -751,7 +753,10 @@ y paralelización mediante hilos.</p>
 <span class="normal">58</span>
 <span class="normal">59</span>
 <span class="normal">60</span>
-<span class="normal">61</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">ecu_schrodinger_rk4</span><span class="p">(</span><span class="n">matriz_ham</span><span class="p">,</span> <span class="n">grilla_actual</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">ecu_schrodinger_rk4</span><span class="p">(</span><span class="n">matriz_ham</span><span class="p">,</span> <span class="n">grilla_actual</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Función para la evolución temporal según la ecuación de Schrödinger con el método de Runge-Kutta de cuarto orden.</span>
 
@@ -761,7 +766,8 @@ y paralelización mediante hilos.</p>
 <span class="sd">        dt (float): Paso de tiempo.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        numpy.ndarray: Nuevo estado de la grilla después de la evolución temporal.</span>
+<span class="sd">        numpy.ndarray:</span>
+<span class="sd">            Nuevo estado de la grilla después de la evolución temporal.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">k1</span> <span class="o">=</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">ecu_sch_paralelo</span><span class="p">(</span><span class="n">matriz_ham</span><span class="p">,</span> <span class="n">grilla_actual</span><span class="p">)</span>
     <span class="n">k2</span> <span class="o">=</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">ecu_sch_paralelo</span><span class="p">(</span><span class="n">matriz_ham</span><span class="p">,</span> <span class="n">grilla_actual</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">k1</span><span class="p">)</span>
@@ -832,7 +838,8 @@ y paralelización mediante hilos.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>numpy.ndarray: Arreglo NumPy que representa el estado inicial con un fermión en la posición central.</p>
+                <p>numpy.ndarray:
+Arreglo NumPy que representa el estado inicial con un fermión en la posición central.</p>
               </div>
             </td>
           </tr>
@@ -853,7 +860,8 @@ y paralelización mediante hilos.</p>
 <span class="normal">21</span>
 <span class="normal">22</span>
 <span class="normal">23</span>
-<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">estado_inicial</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">estado_inicial</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Función para crear el estado inicial (grilla).</span>
 
@@ -861,7 +869,8 @@ y paralelización mediante hilos.</p>
 <span class="sd">        N (int): Tamaño de la grilla.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        numpy.ndarray: Arreglo NumPy que representa el estado inicial con un fermión en la posición central.</span>
+<span class="sd">        numpy.ndarray:</span>
+<span class="sd">            Arreglo NumPy que representa el estado inicial con un fermión en la posición central.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">estado_inicial</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
     <span class="n">estado_inicial</span><span class="p">[</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
@@ -966,12 +975,7 @@ y paralelización mediante hilos.</p>
 
             <details class="quote">
               <summary>Source code in <code>Proyect/Proyecto.py</code></summary>
-              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">109</span>
-<span class="normal">110</span>
-<span class="normal">111</span>
-<span class="normal">112</span>
-<span class="normal">113</span>
-<span class="normal">114</span>
+              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">114</span>
 <span class="normal">115</span>
 <span class="normal">116</span>
 <span class="normal">117</span>
@@ -988,7 +992,13 @@ y paralelización mediante hilos.</p>
 <span class="normal">128</span>
 <span class="normal">129</span>
 <span class="normal">130</span>
-<span class="normal">131</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">inicio</span><span class="p">(</span><span class="n">t_i</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">,</span> <span class="n">tiempos</span><span class="p">):</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">inicio</span><span class="p">(</span><span class="n">t_i</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">,</span> <span class="n">tiempos</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Función principal para evolucionar la grilla en el tiempo.</span>
 
@@ -998,7 +1008,8 @@ y paralelización mediante hilos.</p>
 <span class="sd">        tiempos (numpy.ndarray): Tiempos para los cuales se evaluará la función de onda.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        tuple: Tupla con la forma de la función de onda al cuadrado en cada tiempo y el estado final de la grilla.</span>
+<span class="sd">        tuple:</span>
+<span class="sd">            Tupla con la forma de la función de onda al cuadrado en cada tiempo y el estado final de la grilla.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">dt</span> <span class="o">=</span> <span class="n">tiempos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">tiempos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">N</span> <span class="o">=</span> <span class="n">epsilon</span><span class="o">.</span><span class="n">size</span>
@@ -1088,7 +1099,8 @@ y paralelización mediante hilos.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>numpy.ndarray: Matriz Hamiltoniana generada.</p>
+                <p>numpy.ndarray:
+Matriz Hamiltoniana generada.</p>
               </div>
             </td>
           </tr>
@@ -1097,8 +1109,7 @@ y paralelización mediante hilos.</p>
 
             <details class="quote">
               <summary>Source code in <code>Proyect/Proyecto.py</code></summary>
-              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">26</span>
-<span class="normal">27</span>
+              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">27</span>
 <span class="normal">28</span>
 <span class="normal">29</span>
 <span class="normal">30</span>
@@ -1113,7 +1124,9 @@ y paralelización mediante hilos.</p>
 <span class="normal">39</span>
 <span class="normal">40</span>
 <span class="normal">41</span>
-<span class="normal">42</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">matriz_ham</span><span class="p">(</span><span class="n">t_i</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">):</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">matriz_ham</span><span class="p">(</span><span class="n">t_i</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Función para crear la matriz Hamiltoniana.</span>
 
@@ -1122,7 +1135,8 @@ y paralelización mediante hilos.</p>
 <span class="sd">        epsilon (numpy.ndarray): Valores de la diagonal de la matriz Hamiltoniana.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        numpy.ndarray: Matriz Hamiltoniana generada.</span>
+<span class="sd">        numpy.ndarray:</span>
+<span class="sd">            Matriz Hamiltoniana generada.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">N</span> <span class="o">=</span> <span class="n">epsilon</span><span class="o">.</span><span class="n">size</span>
     <span class="n">matriz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">))</span>
@@ -1235,7 +1249,8 @@ y paralelización mediante hilos.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>numpy.ndarray: Resultado de la parte de la ecuación de Schrödinger calculada por el hilo.</p>
+                <p>numpy.ndarray:
+Resultado de la parte de la ecuación de Schrödinger calculada por el hilo.</p>
               </div>
             </td>
           </tr>
@@ -1244,10 +1259,7 @@ y paralelización mediante hilos.</p>
 
             <details class="quote">
               <summary>Source code in <code>Proyect/Proyecto.py</code></summary>
-              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">63</span>
-<span class="normal">64</span>
-<span class="normal">65</span>
-<span class="normal">66</span>
+              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">66</span>
 <span class="normal">67</span>
 <span class="normal">68</span>
 <span class="normal">69</span>
@@ -1257,7 +1269,11 @@ y paralelización mediante hilos.</p>
 <span class="normal">73</span>
 <span class="normal">74</span>
 <span class="normal">75</span>
-<span class="normal">76</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">parte_ecu_sch</span><span class="p">(</span><span class="n">matriz_ham</span><span class="p">,</span> <span class="n">grilla_actual</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">parte_ecu_sch</span><span class="p">(</span><span class="n">matriz_ham</span><span class="p">,</span> <span class="n">grilla_actual</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Función para dividir el trabajo entre varios hilos para la ecuación de Schrödinger.</span>
 
@@ -1268,7 +1284,8 @@ y paralelización mediante hilos.</p>
 <span class="sd">        end (int): Índice de fin para la porción de trabajo del hilo.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        numpy.ndarray: Resultado de la parte de la ecuación de Schrödinger calculada por el hilo.</span>
+<span class="sd">        numpy.ndarray:</span>
+<span class="sd">            Resultado de la parte de la ecuación de Schrödinger calculada por el hilo.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">matriz_ham</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">,</span> <span class="p">:]</span> <span class="o">@</span> <span class="n">grilla_actual</span>
 </code></pre></div></td></tr></table></div>
