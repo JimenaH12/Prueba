@@ -14,7 +14,7 @@ En esta sección se mostraran el planteamiento y los resultados obtenidos de MOD
 >  Mejor compromiso entre complejidad y error de aproximación. Este método es el más utilizado comúnmente para resolver ODEs.Nos permite calcular con precisión la evolución temporal de la función de onda.
 
 ## Visualizar su dinámica
-###### Probabilidad de encontrar el fermion en una evolución cuántica temporal dentro de una grilla unidimensional.
+##### Probabilidad de encontrar el fermion en una evolución cuántica temporal dentro de una grilla unidimensional.
 
 
 ###### Método de Runge-Kutta de cuarto orden
