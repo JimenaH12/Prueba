@@ -26,6 +26,10 @@ Los puntos maximos locales de la gráfica, nos estarían dando los sitios prefer
 Mientras que los puntos más bajos o mínimos locales en la curva de la gráfica nos indican los sitios con menor probabilidad de encontrar un fermión, ya sea por efectos de repulsión, nodos en la función de onda, o barreras potenciales.
 Como la distribución de los picos es iregular  de picos se  puede indicar un desorden en el sistema, por ejemplo defectos en la red.
 
+
+![Animación1](m.gif)
+![Animación1](v.gif)
+
 ###### Método Formal a la ecuación de schrodinger
 
 ![Animación2](gif2.gif)
