@@ -52,7 +52,8 @@ Por lo que observando la animación se puede concluir que, en efecto, al aumenta
 ![Animación1](v.gif) 
 
 ## Paralelización 
-En el gráfico presentado a continuación, observamos cómo la paralelización debería acelerar el proceso de ejecución, ya que el código se divide en múltiples tareas. Sin embargo, en este caso particular, la versión paralelizada fue más lenta. Esto puede deberse a varios factores, como sobrecarga de procesos, problemas de sincronización, o limitaciones de recursos en la computadora.    
+En el gráfico presentado a continuación, observamos cómo la paralelización debería acelerar el proceso de ejecución, ya que el código se divide en múltiples tareas. Sin embargo, en este caso particular, la versión paralelizada fue más lenta. Esto puede deberse a varios factores, como sobrecarga de procesos, problemas de sincronización, o limitaciones de recursos en la computadora.  
 <div>
 <img src="paralelizacion.jpeg"/>
+![img](paralelizacion.jpeg)
 </div>
